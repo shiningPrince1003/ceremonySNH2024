@@ -26,7 +26,7 @@ for row in json_data["rows"]:
         try:
             response = requests.get(url=file_url, headers=headers, timeout=10)
             response.raise_for_status()
-            with open(f"{script_dir}/note_2024/{file_name}", "wb+") as file_bin:
+            with open(f"{script_dir}/notes_2024/{file_name}", "wb+") as file_bin:
                 file_bin.write(response.content)
         except requests.exceptions.RequestException as e:
             print(f"Error downloading {file_url}: {e}")
